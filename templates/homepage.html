@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class=form-container>
+  <form action='/', method ="post">
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" name="age" placeholder="in years">
+        </div>
+        <div class="mb-3">
+          <label for="sex" class="form-label">Sex:</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sex" id="male" value="1">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sex" id="female" value="0">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="chest_pain_type" class="form-label">Chest Pain Type</label>
+          <select class="form-select" name="chest_pain_type" aria-label="Default select example">
+            <option value=1>typical angina</option>
+            <option value=2>atypical angina</option>
+            <option value=3>non-anginal pain</option>
+            <option value=4>asymptomatic </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="resting_bp_s" class="form-label">Resting Blood Pressure</label>
+          <input type="number" class="form-control" name="resting_bp_s" placeholder="in mmHg">
+        </div>
+        <div class="mb-3">
+          <label for="cholestrol" class="form-label">Serum Cholestrol</label>
+          <input type="number" class="form-control" name="cholestrol" placeholder="in mg/dl">
+        </div>
+        <div class="mb-3">
+          <label for="blood_sugar" class="form-label">Fasting Blood Sugar</label>
+          <input type="number" class="form-control" name="blood_sugar" placeholder="in mg/dl">
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="resting_ecg" class="form-label">Resting Electrocardiogram Results</label>
+          <select class="form-select" name="resting_ecg" aria-label="Default select example">
+            <option value="0">normal</option>
+            <option value="1">having ST-T wave abnormality (T wave inversions 
+              and/or ST elevation or depression of > 0.05 mV)</option>
+            <option value="2">showing probable or definite left ventricular 
+              hypertrophy by Estes' criteria</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="max_heart_rate" class="form-label">Maximum Heart Rate Achieved</label>
+          <input type="number" class="form-control" name="max_heart_rate" placeholder="between 71 and 202">
+        </div>
+        <div class="mb-3">
+          <label for="exercise_angina" class="form-label">Exercise Induced Angina</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="exercise_angina" id="yes" value="1">
+            <label class="form-check-label" for="yes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="exercise_angina" id="no" value="0">
+            <label class="form-check-label" for="no">No</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="oldpeak" class="form-label">Oldpeak = ST</label>
+          <input type="number" step="0.01" min="0" max="5" class="form-control" name="oldpeak" placeholder="depression">
+        </div>
+        <div class="mb-3">
+          <label for="ST_slope" class="form-label">Slope of the Peak Exercise ST Segment</label>
+          <select class="form-select" name="ST_slope" aria-label="Default select example">
+            <option value="1">upsloping</option>
+            <option value="2">flat</option>
+            <option value="3">downsloping</option>
+          </select>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
